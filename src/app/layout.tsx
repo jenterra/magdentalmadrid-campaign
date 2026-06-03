@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SiteScroll } from "@/components/SiteScroll";
-import { SITE } from "@/lib/site";
+import { GOOGLE_STATS, SITE } from "@/lib/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -33,6 +33,20 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `Implantes dentales en Madrid – ${SITE.name}`,
     description: SITE.description,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${SITE.name} – Implantes dentales en Madrid`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Implantes dentales en Madrid – ${SITE.name}`,
+    description: SITE.description,
+    images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
   icons: { icon: "/images/favicon.png" },
@@ -55,6 +69,12 @@ const localBusinessJsonLd = {
   },
   areaServed: "Madrid",
   medicalSpecialty: "Implantología dental",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: GOOGLE_STATS.rating,
+    reviewCount: GOOGLE_STATS.reviewCount,
+    bestRating: 5,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -15,7 +15,16 @@ export const PHONE_DISPLAY = "608 87 88 77";
 export const EMAIL = "contacto@magdentalmadrid.com";
 export const ADDRESS = "C. de Canillas, 136 posterior, Hortaleza";
 export const ADDRESS_FULL = "C. de Canillas, 136 posterior, 28043 Hortaleza, Madrid";
-export const WHATSAPP = "https://wa.me/34608878877";
+/** Pre-filled WhatsApp message (Spanish) */
+export const WHATSAPP_MESSAGE = "Hola, quiero pedir cita sin coste";
+
+export const WHATSAPP = `https://wa.me/34608878877?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+/** Google Business – rating & review volume (see GOOGLE_REVIEWS_URL) */
+export const GOOGLE_STATS = {
+  rating: 4.9,
+  reviewCount: 265,
+} as const;
 
 /** MAG Dental Google Business – Google Maps place & reviews */
 export const GOOGLE_REVIEWS_URL =

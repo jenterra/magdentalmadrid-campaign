@@ -49,7 +49,6 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label={COPY.googleReviewsAria}
             >
-              {/* Native img keeps full-color PNG (Next/Image was washing out colors) */}
               <img
                 src="/images/google-reviews.png"
                 alt="Google Reviews"
