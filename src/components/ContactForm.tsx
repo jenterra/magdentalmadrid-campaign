@@ -1,41 +1,43 @@
 "use client";
 
+import { COPY } from "@/lib/site";
+
 export function ContactForm() {
   return (
     <form
       className="contact-form"
       onSubmit={(e) => {
         e.preventDefault();
-        alert("Gracias. Nos pondremos en contacto contigo pronto.");
+        alert(COPY.contact.formSuccess);
         e.currentTarget.reset();
       }}
     >
       <div className="contact-form__row">
         <label>
           <span>
-            Name <span className="contact-form__required" aria-hidden="true">*</span>
+            {COPY.form.name} <span className="contact-form__required" aria-hidden="true">*</span>
           </span>
-          <input name="name" type="text" placeholder="Name" required />
+          <input name="name" type="text" placeholder={COPY.form.namePlaceholder} required />
         </label>
         <label>
           <span>
-            Email <span className="contact-form__required" aria-hidden="true">*</span>
+            {COPY.form.email} <span className="contact-form__required" aria-hidden="true">*</span>
           </span>
-          <input name="email" type="email" placeholder="Email" required />
+          <input name="email" type="email" placeholder={COPY.form.emailPlaceholder} required />
         </label>
       </div>
       <label>
         <span>
-          Phone <span className="contact-form__required" aria-hidden="true">*</span>
+          {COPY.form.phone} <span className="contact-form__required" aria-hidden="true">*</span>
         </span>
-        <input name="phone" type="tel" placeholder="Phone" required />
+        <input name="phone" type="tel" placeholder={COPY.form.phonePlaceholder} required />
       </label>
       <label>
-        Message
-        <textarea name="message" rows={4} placeholder="Message" />
+        {COPY.form.message}
+        <textarea name="message" rows={4} placeholder={COPY.form.messagePlaceholder} />
       </label>
       <button type="submit" className="btn btn--submit">
-        Make Appointment
+        {COPY.form.submit}
       </button>
     </form>
   );

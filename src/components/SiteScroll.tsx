@@ -40,9 +40,9 @@ function setActiveNavSection(sectionId: string) {
     });
 }
 
-function getActiveSectionId(headerHeight: number): string {
+function getActiveSectionId(headerHeight: number): (typeof NAV_SECTION_IDS)[number] {
   const scrollLine = window.scrollY + headerHeight + ACTIVE_OFFSET;
-  let active = NAV_SECTION_IDS[0];
+  let active: (typeof NAV_SECTION_IDS)[number] = NAV_SECTION_IDS[0];
 
   for (const id of NAV_SECTION_IDS) {
     const section = document.getElementById(id);

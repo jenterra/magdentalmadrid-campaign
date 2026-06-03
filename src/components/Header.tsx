@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { NAV, PHONE_DISPLAY, PHONE_LINK, SITE } from "@/lib/site";
+import { COPY, NAV, PHONE_DISPLAY, PHONE_LINK, SITE } from "@/lib/site";
 
 export function Header() {
   return (
@@ -41,7 +41,7 @@ export function Header() {
               ))}
             </ul>
             <a href="#contacto" className="site-header__cta site-header__cta--mobile">
-              Cita sin coste
+              {COPY.ctaShort}
             </a>
           </nav>
 
@@ -50,7 +50,7 @@ export function Header() {
               {PHONE_DISPLAY}
             </a>
             <a href="#contacto" className="site-header__cta">
-              Cita sin coste
+              {COPY.ctaShort}
             </a>
           </div>
         </div>
