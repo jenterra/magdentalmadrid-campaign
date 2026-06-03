@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { SiteScroll } from "@/components/SiteScroll";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${manrope.variable} scroll-smooth`}>
       <body>
         <SiteScroll />
+        <ScrollReveal />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

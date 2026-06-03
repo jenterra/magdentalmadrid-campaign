@@ -65,7 +65,7 @@ export default function Home() {
         </section>
 
         {/* Services */}
-        <section id="implantes" className="section services">
+        <section id="implantes" className="section services scroll-reveal">
           <div className="container">
             <hr className="services__rule" />
             <div className="services__grid">
@@ -92,7 +92,7 @@ export default function Home() {
         </section>
 
         {/* Before / After */}
-        <section id="resultados" className="section section--dark">
+        <section id="resultados" className="section section--dark scroll-reveal">
           <div className="container">
             <h2 className="section__title section__title--center">fotos Antes y después</h2>
             <div className="ba-grid">
@@ -111,7 +111,7 @@ export default function Home() {
         </section>
 
         {/* Specialist */}
-        <section id="clinica" className="section specialist">
+        <section id="clinica" className="section specialist scroll-reveal">
           <div className="container">
             <div className="specialist__intro">
               <h2 className="section__title">Especialista en Implantología Avanzada</h2>
@@ -162,7 +162,7 @@ export default function Home() {
         </section>
 
         {/* Clinic */}
-        <section className="section clinic">
+        <section className="section clinic scroll-reveal">
           <div className="container clinic__grid">
             <div className="clinic__text">
               <h2 className="section__title">Una clínica moderna pensada para tu comodidad</h2>
@@ -189,7 +189,7 @@ export default function Home() {
         </section>
 
         {/* Gallery */}
-        <section id="5" className="section gallery-section">
+        <section id="5" className="section gallery-section scroll-reveal">
           <div className="container">
             <div className="gallery-section__head">
               <div>
@@ -205,7 +205,7 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contacto" className="section contact">
+        <section id="contacto" className="section contact scroll-reveal">
           <div className="container contact__grid">
             <div>
               <h2 className="section__title section__title--light">Solicita tu cita sin coste</h2>

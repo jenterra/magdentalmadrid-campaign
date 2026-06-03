@@ -1280,29 +1280,25 @@ a.hero__rating:focus-visible {
   transform: scale(1.05);
 }
 
-/* Scroll reveal (CSS only) */
-@media (prefers-reduced-motion: no-preference) {
-  .hero__content,
-  .services__card,
-  .ba-grid__item,
-  .specialist__intro,
-  .specialist__row > *,
-  .clinic__grid > *,
-  .gallery-grid__item {
-    animation: fadeUp 0.8s ease both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 25%;
-  }
+/* Scroll reveal – fade in when section enters viewport */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
     opacity: 1;
     transform: none;
+    transition: none;
   }
 }
 
