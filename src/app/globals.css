@@ -1365,27 +1365,42 @@ a.hero__rating:focus-visible {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    gap: 0;
+  }
+
+  .site-header__links li {
+    border-bottom: 1px solid #eee;
   }
 
   .site-header__nav .site-header__links a {
+    display: block;
+    width: 100%;
     color: var(--color-navy);
-    padding: 14px 0;
+    padding: 16px 4px;
     font-size: 18px;
-    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    border: none;
     border-radius: 0;
+    box-shadow: none;
+    background: transparent;
   }
 
   .site-header__nav .site-header__links a:hover,
   .site-header__nav .site-header__links a:focus-visible {
-    background: transparent;
+    background: rgba(4, 43, 111, 0.04);
     color: var(--color-blue);
   }
 
-  .site-header__nav .site-header__links a.is-active {
+  .site-header__nav .site-header__links a.is-active,
+  .site-header--scrolled .site-header__nav .site-header__links a.is-active {
     color: var(--color-blue);
     font-weight: 700;
-    background: transparent;
+    background: rgba(4, 43, 111, 0.06);
     box-shadow: none;
+    border: none;
+  }
+
+  .site-header__nav .site-header__links li:has(a.is-active) {
     border-bottom: 2px solid var(--color-blue);
   }
 
