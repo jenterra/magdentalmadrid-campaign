@@ -12,16 +12,22 @@ export function ContactForm() {
     >
       <div className="contact-form__row">
         <label>
-          Name
+          <span>
+            Name <span className="contact-form__required" aria-hidden="true">*</span>
+          </span>
           <input name="name" type="text" placeholder="Name" required />
         </label>
         <label>
-          Email
+          <span>
+            Email <span className="contact-form__required" aria-hidden="true">*</span>
+          </span>
           <input name="email" type="email" placeholder="Email" required />
         </label>
       </div>
       <label>
-        Phone
+        <span>
+          Phone <span className="contact-form__required" aria-hidden="true">*</span>
+        </span>
         <input name="phone" type="tel" placeholder="Phone" required />
       </label>
       <label>

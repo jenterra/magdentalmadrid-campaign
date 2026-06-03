@@ -34,9 +34,10 @@ export const NAV = [
 export const NAV_SECTION_IDS = NAV.map((item) => item.href.slice(1));
 
 export const SOCIAL = [
-  { label: "Facebook", href: "https://www.facebook.com/magdental" },
-  { label: "Instagram", href: "https://www.instagram.com/magdentalmadrid/" },
-  { label: "X", href: "https://twitter.com/MAGdental" },
+  { icon: "facebook" as const, label: "Facebook", href: "https://www.facebook.com/magdental" },
+  { icon: "instagram" as const, label: "Instagram", href: "https://www.instagram.com/magdentalmadrid/" },
+  { icon: "whatsapp" as const, label: "WhatsApp", href: WHATSAPP },
+  { icon: "x" as const, label: "X", href: "https://twitter.com/MAGdental" },
 ] as const;
 
 export const HERO = {

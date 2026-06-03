@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { GalleryGrid } from "@/components/GalleryGrid";
 import { Header } from "@/components/Header";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
   BEFORE_AFTER,
-  GALLERY,
   GOOGLE_REVIEWS_URL,
   HERO,
   HERO_BULLETS,
@@ -71,7 +71,15 @@ export default function Home() {
             <div className="services__grid">
               {SERVICES.map((s) => (
                 <article key={s.title} className="services__card">
-                  <Image src={s.image} alt="" width={550} height={365} className="services__img" />
+                  <div className="services__media">
+                    <Image
+                      src={s.image}
+                      alt=""
+                      fill
+                      className="services__img"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                   <h2>{s.title}</h2>
                   <p>{s.text}</p>
                 </article>
@@ -104,8 +112,8 @@ export default function Home() {
 
         {/* Specialist */}
         <section id="clinica" className="section specialist">
-          <div className="container specialist__grid">
-            <div>
+          <div className="container">
+            <div className="specialist__intro">
               <h2 className="section__title">Especialista en Implantología Avanzada</h2>
               <div className="prose">
                 <p>
@@ -126,25 +134,29 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="specialist__about">
-              <Image
-                src="/images/doctor.jpg"
-                alt="Dr. Alejandro Prieto"
-                width={784}
-                height={1024}
-                className="specialist__photo"
-              />
-              <h2 className="section__title">Alejandro Prieto Clínica Dental</h2>
-              <p>
-                Alejandro Prieto Dental somos una de las clínicas de referencia en Madrid, en implantología avanzada
-                y alta estética dental. Liderada por el Dr. Alejandro Prieto, cirujano implantólogo de prestigio
-                internacional, atendemos casos complejos —incluida falta de hueso dental— y pacientes que buscan
-                resultados de alta estética natural con prótesis o microcarillas dentales. Nuestra clínica en el
-                Barrio de Salamanca es un espacio premium cuidado al detalle, con mejores marcas, procesos 100%
-                digitales y laboratorio dental en exclusiva. Cada paciente es único, y así lo diagnosticamos,
-                planificamos y tratamos.
-              </p>
-              <Button href="#contacto">Pide tu cita sin coste</Button>
+            <div className="specialist__row">
+              <div className="specialist__media">
+                <Image
+                  src="/images/doctor.jpg"
+                  alt="Dr. Alejandro Prieto"
+                  width={784}
+                  height={1024}
+                  className="specialist__photo"
+                />
+              </div>
+              <div className="specialist__about">
+                <h2 className="section__title">Alejandro Prieto Clínica Dental</h2>
+                <p>
+                  Alejandro Prieto Dental somos una de las clínicas de referencia en Madrid, en implantología avanzada
+                  y alta estética dental. Liderada por el Dr. Alejandro Prieto, cirujano implantólogo de prestigio
+                  internacional, atendemos casos complejos —incluida falta de hueso dental— y pacientes que buscan
+                  resultados de alta estética natural con prótesis o microcarillas dentales. Nuestra clínica en el
+                  Barrio de Salamanca es un espacio premium cuidado al detalle, con mejores marcas, procesos 100%
+                  digitales y laboratorio dental en exclusiva. Cada paciente es único, y así lo diagnosticamos,
+                  planificamos y tratamos.
+                </p>
+                <Button href="#contacto">Pide tu cita sin coste</Button>
+              </div>
             </div>
           </div>
         </section>
@@ -188,13 +200,7 @@ export default function Home() {
               </div>
               <Button href="#contacto">Pide tu cita sin coste</Button>
             </div>
-            <div className="gallery-grid">
-              {GALLERY.map((img) => (
-                <a key={img.src} href={img.src} className="gallery-grid__item" target="_blank" rel="noopener noreferrer">
-                  <Image src={img.src} alt={img.alt} width={768} height={1024} />
-                </a>
-              ))}
-            </div>
+            <GalleryGrid />
           </div>
         </section>
 
